@@ -1,0 +1,64 @@
+using System;
+
+namespace ConsoleApp8
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int employeeOne = int.Parse(Console.ReadLine());
+            int employeeTwo = int.Parse(Console.ReadLine());
+            int employeeThree = int.Parse(Console.ReadLine());
+            int studentCount = int.Parse(Console.ReadLine());
+
+
+            int studentCountPerHour = employeeOne + employeeOne + employeeThree;
+            int time = 0;
+            while (true)
+            {
+                studentCount -= studentCountPerHour;
+                
+                if (studentCount<0)
+                {
+                    break;                
+                }
+
+                if (time%4==0)
+                {
+                    time++;
+                }
+
+
+
+                if (studentCount<studentCountPerHour)
+             
+                {
+                    break;
+                }
+                
+            }
+            Console.WriteLine($"Time needed: {studentCount}h");
+        }
+    }
+}
+
+
+
+
+Input	            Output	                   Comment
+5                 20	Time needed: 2h           
+6
+4
+20	                                          Time needed: 2h.	All employees can answer 15 students per hour. 
+                                               After the first hour there are 5 students left to be answered.
+                                               All students will be answered in the second hour.
+
+
+
+
+
+
+
+
+
+
