@@ -28,6 +28,16 @@ public class Program
 					if (price[count.Length - 1] == '$'){
 						decimal.Parse(price);
 						Console.WriteLine(price);
+						
+						var charsToRemove = new string[] { "|", "$", "%", "." };
+						foreach (var c in charsToRemove)
+						{
+							customerName = customerName.Replace(c, string.Empty);
+							productName = productName.Replace(c, string.Empty);
+							count = count.Replace(c, string.Empty);
+							price = price.Replace(c, string.Empty);
+						}
+						
 					}else{
 						Console.WriteLine("invalid input, must end with $");
 					}
