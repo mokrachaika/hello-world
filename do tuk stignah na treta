@@ -1,0 +1,46 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		string customerName = Console.ReadLine();
+		string productName = Console.ReadLine();
+		string count = Console.ReadLine(); 
+		string price = Console.ReadLine();
+		
+		if (customerName[0] == '%' && customerName[customerName.Length - 1] == '%'){
+			customerName = customerName.Split('%', '%')[1];
+			customerName = char.ToUpper(customerName[0]) + customerName.Substring(1).ToLower();
+			Console.WriteLine(customerName);
+			
+			if (productName[0] == '<' && productName[productName.Length - 1] == '>'){
+				productName = productName.Split('<', '>')[1];
+				productName = char.ToUpper(productName[0]) + productName.Substring(1).ToLower();
+				Console.WriteLine(productName);
+				
+				if (count[0] == '|' && count[count.Length - 1] == '|'){
+					count = productName.Split('|', '|')[1];
+					count = char.ToUpper(count[0]) + count.Substring(1).ToLower();
+					int.Parse(count);
+					Console.WriteLine(count);
+					
+					if (price[count.Length - 1] == '$'){
+						decimal.Parse(price);
+						Console.WriteLine(price);
+					}else{
+						Console.WriteLine("invalid input, must end with $");
+					}
+					
+				}else{
+					Console.WriteLine("invalid input, must be surrounded by | and |");
+				}
+			}else{
+				Console.WriteLine("invalid input, must be surrounded by < and >");
+			}
+		}else{
+			Console.WriteLine("invalid input, must be surrounded by % and %");
+		}
+		
+	}
+}
