@@ -1,0 +1,47 @@
+using System;
+
+namespace ConsoleApp8
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int employeeOne = int.Parse(Console.ReadLine());
+            int employeeTwo = int.Parse(Console.ReadLine());
+            int employeeThree = int.Parse(Console.ReadLine());
+            int studentCount = int.Parse(Console.ReadLine());
+
+            
+            int studentCountPerHour = employeeOne+employeeTwo+employeeThree;
+            int time = 0;
+            while (true)
+            {
+                studentCount -= studentCountPerHour;
+                
+                if (studentCount<0)
+                {
+                    
+                    break;             
+                }
+                time++;
+               if (time%4==0)
+                {
+                    time++;
+                }
+
+
+
+                if (studentCount<studentCountPerHour)
+             
+                {
+                
+                    break;
+                }
+                
+            }
+            Console.WriteLine($"Time needed: {time}h.");
+        }
+    }
+}
+
+SAMO NA EDNO MQSTO MI DAVA GRESHKA 
